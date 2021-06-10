@@ -1,0 +1,18 @@
+#define 3
+#define 3
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+//声明
+void Initboard(char board[ROW][COL],int row, int col);
+void Dispalyboard(char board[ROW][COL],int row,int col);
+void palyerboard(char board[ROW][COL],int row,int col);
+void computerboard(char board[ROW][COL],int row,int col);
+
+//判断输赢、四种游戏结果
+//玩家赢 -'*'
+//NPC赢 -'#'
+//平局 -'Q'
+//继续 -'C'
+char IsWin(char board[ROW][COL],int row,int col);

@@ -1,0 +1,79 @@
+三子棋游戏
+#include <stdio.h>
+#include "game.h"
+void menu()//菜单函数
+{
+       printf("*********************************\n");
+       printf("****       1.paly       0.exit      ****\n");
+       printf("*********************************\n");
+}
+void game()
+{
+      int ret=0;
+      char board[ROW][COL]={0}//建立数组
+      //初始化数组
+      Initboard(board,ROW,COL);
+      //显示棋盘
+      Dispalyboard(board,ROW,COL);
+//下棋
+      whlie(1)
+   {
+      //玩家下棋
+      palyermove(board,ROW,COL);
+      Dispalyboard(board,ROW,COL);
+      //判断玩家是否赢
+      ret=IsWin();
+      if(ret!='C')
+      {
+            break;
+      }
+      //电脑下棋
+      computermove(board,ROW,COL);
+      Dispalyboard(board,ROW,COL);
+      ret=IsWin();
+      if(ret!='C')
+      {
+           break;
+      }
+}
+      if(ret=='*')
+{
+printf("玩家赢");
+}
+else  if(ret=='#')
+{
+printf("NPC赢");
+}
+else  if(ret=='Q')
+{
+printf("平局");
+}
+
+}
+void test()
+{
+       srend()
+       int input=0;
+      do
+    {
+       menu;
+       printf("请选择:>\n");
+       scanf("%d",&input);
+       switch(input)
+       {
+             case 1:
+	game();
+	break;
+             case 0:
+	printf("退出游戏！");
+             default:
+	printf("输入错误，请重新选择！");
+	break;
+     }
+        while(input);
+}
+int main()
+{
+      test();
+      return 0;
+}
